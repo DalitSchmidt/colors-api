@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Colors</title>
+
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+        <link rel="stylesheet prefetch" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body ng-app="ColorsApp">
+        <main>
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">Color App</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li><a href="/#/home">Home</a></li>
+                        <!--<li><a href="/#/favorites">Favorites</a></li>-->
+                        <li><a href="/#/color/add">Add Color</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="container">
+                <div class="row">
+                    <ng-view></ng-view>
+                </div>
+            </div>
+        </main>
+
+        <!--vendor folder-->
+        <script src="vendor/angular.js"></script>
+        <script src="vendor/angular-route.js"></script>
+        <script src="vendor/jquery-3.2.1.js"></script>
+        <script src="vendor/underscore.js"></script>
+
+        <!--app-->
+        <script src="app/Application.js"></script>
+        <!--Color-->
+        <script src="app/Color/AddColorController.js"></script>
+        <script src="app/Color/APIColorsFactory.js"></script>
+        <script src="app/Color/ColorInfoController.js"></script>
+        <!--Favorites-->
+        <!--<script src="app/Favorites/FavoritesController.js"></script>-->
+        <!--<script src="app/Favorites/FavoritesFactory.js"></script>
+        <script src="app/Favorites/LocalStorageFactory.js"></script>
+        <!--Schema-->
+        <!--<script src="app/Schema/SchemaController.js"></script>-->
+        <!--<script src="app/Schema/SchemaFactory.js"></script>-->
+        <!--Search-->
+        <script src="app/Search/SearchController.js"></script>
+        <script src="app/Search/SearchDirective.js"></script>
+        <!--Shared-->
+        <script src="app/Shared/AppConfig.js"></script>
+        <script src="app/Shared/CapitalizeFilter.js"></script>
+        <script src="app/Shared/MainController.js"></script>
+    </body>
+</html>

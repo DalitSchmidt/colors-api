@@ -1,0 +1,24 @@
+<section class="screen" id="search">
+    <h1>Search Color</h1>
+    <div class="panel-body">
+        <div class="search-form">
+            <form class="form-inline" name="colorsForm" novalidate>
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0" ng-class="{ 'has-error' : colorsForm.colorHex.$invalid && !colorsForm.colorHex.$pristine }">
+                    <div class="input-group-addon">#</div>
+                    <input class="form-control" type="text" id="inlineFormInputGroup" placeholder="HEX" name="colorHex" ng-model="hex" ng-model-options="{ debounce: 500 }" required="required">
+                </div>
+            </form>
+        </div>
+
+        <div id="colors-results">
+            <ul>
+                <li  ng-repeat="color in results">
+                    <a href="" class="color-item" ng-style="{'background-color': '#' + color.hex}">
+                        <span class="color-name">{{color.name}}</span>
+                        <span class="color-hex">{{'#' + color.hex}}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

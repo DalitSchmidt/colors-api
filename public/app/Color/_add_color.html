@@ -1,0 +1,27 @@
+<section class="screen" id="add-color">
+    <h1>Add Color</h1>
+    <div class="panel-body">
+        <form class="form-inline" name="colorsForm" ng-submit="addNewColor($event, colorsForm.$valid)" novalidate>
+            <label class="sr-only" for="inlineFormInput">Name</label>
+
+            <input class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" type="text" placeholder="Color name" name="colorName" ng-model="newColor.name" ng-pattern="/^[A-Za-z]{3,}$/" ng-class="{ 'error' : colorsForm.colorName.$invalid && !colorsForm.colorName.$pristine }" required="required">
+
+            <div class="input-group mb-2 mr-sm-2 mb-sm-0" ng-class="{ 'has-error' : colorsForm.colorHex.$invalid && !colorsForm.colorHex.$pristine }" >
+                <div class="input-group-addon">#</div>
+                <input class="form-control" type="text" id="inlineFormInputGroup" placeholder="HEX" name="colorHex" ng-model="newColor.hex" ng-disabled="newColor.mode == 'server'" required="required">
+            </div>
+
+            <div class="input-group mb-2 mr-sm-2 mb-sm-0 demonstrate" ng-style="{'background-color': '#' + newColor.hex}">
+
+            </div>
+
+            <div>
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="mode" ng-model="newColor.mode" value="server"> Server Validation
+                </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary" ng-disabled="colorsForm.$invalid">Add</button>
+        </form>
+    </div>
+</section>
